@@ -26,51 +26,84 @@ console.log('** Module 5. Lesson 9. Контекст вызова функции
 // console.log(chopShop.calcTotalPrice('Ruby')); // 1600
 
 
-// *****************************************************************
-// Example 2 - Телефонная книга
+// // *****************************************************************
+// // Example 2 - Телефонная книга
 
-// Выполните рефакторинг методов объекта phonebook чтобы код заработал.
+// // Выполните рефакторинг методов объекта phonebook чтобы код заработал.
 
-const phonebook = {
-  contacts: [],
-  add(contact) {
-    const newContact = {
-      list: 'default',
-      ...contact,
-      id: generateId(),
-      createdAt: getDate(),
-    };
-    contacts.push(newContact);
-  },
-  generateId() {
-    return '_' + Math.random().toString(36).substr(2, 9);
-  },
-  getDate() {
-    return Date.now();
-  },
-};
+// const phonebook = {
+//   contacts: [],
+  
+//   add(contact) {
+//     const newContact = {
+//       list: 'default',
+//       ...contact,
+//       id: this.generateId(),
+//       createdAt: this.getDate(),
+//     };
+//     this.contacts.push(newContact);
+//   },
 
-console.log(
-  phonebook.add({
-    name: 'Mango',
-    email: 'mango@mail.com',
-    list: 'friends',
-  }),
-);
-console.log(
-  phonebook.add({
-    name: 'Poly',
-    email: 'poly@hotmail.com',
-  }),
-);
+//   generateId() {
+//     return '_' + Math.random().toString(36).substr(2, 9);
+//   },
+
+//   getDate() {
+//     return Date.now();
+//   },
+// };
+
+// console.log(
+//   phonebook.add({
+//     name: 'Mango',
+//     email: 'mango@mail.com',
+//     list: 'friends',
+//   }),
+// );
+
+// console.log(
+//   phonebook.add({
+//     name: 'Poly',
+//     email: 'poly@hotmail.com',
+//   }),
+// );
+
+// console.log(phonebook)
 
 
-// *****************************************************************
-// Example 3 - Калькулятор
+// // *****************************************************************
+// // Example 3 - Калькулятор
 
-// Создайте объект calculator с тремя методами:
+// // Создайте объект calculator с тремя методами:
 
-// read(a, b)- принимает два значения и сохраняет их как свойства объекта.
-// add() - возвращает сумму сохранённых значений.
-// mult() - перемножает сохранённые значения и возвращает результат.
-// const calculator = {};
+// // read(a, b)- принимает два значения и сохраняет их как свойства объекта.
+// // add() - возвращает сумму сохранённых значений.
+// // mult() - перемножает сохранённые значения и возвращает результат.
+
+
+// const calculator = {
+//   firstNumber: 0,
+//   secondNumber: 0,
+
+//   read(a, b) {
+//     this.firstNumber = a;
+//     this.secondNumber = b;
+//   },
+
+//   add() {
+//     return this.firstNumber + this.secondNumber;
+//   },
+
+//   mult() {
+//     return this.firstNumber * this.secondNumber;
+//   },
+// };
+
+// console.log(calculator);
+
+// calculator.read(10, 2);
+// console.log(calculator);
+
+// console.log(calculator.add()); // 12
+
+// console.log(calculator.mult()); // 20
